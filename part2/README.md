@@ -54,11 +54,12 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ```
 ### setup kubeconfig
+```
 kubectl config set-credentials saiyam --client-certificate=saiyam.crt --client-key=saiyam.key
 kubectl config get-contexts
 kubectl config set-context saiyam-context --cluster=kubernetes --namespace=default --user=saiyam
 kubectl config use-context saiyam-context
-
+```
 
 ### Merging multiple KubeConfig files
 export KUBECONFIG=/path/to/first/config:/path/to/second/config:/path/to/third/config
