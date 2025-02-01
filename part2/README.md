@@ -22,11 +22,12 @@ spec:
   usages:
   - client auth
 ```
+```
 kubectl apply -f csr.yaml
 kubectl certificate approve saiyam
 
 kubectl get csr saiyam -o jsonpath='{.status.certificate}' | base64 --decode > saiyam.crt
-
+```
 ## Role and role binding
 ```
 kind: Role
