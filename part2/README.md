@@ -26,7 +26,7 @@ spec:
 kubectl apply -f csr.yaml
 kubectl certificate approve saiyam
 
-kubectl get csr saiyam -o jsonpath='{.status.certificate}' | base64 --decode > saiyam.crt
+kubectl get csr saiyam -o jsonpath='{.status.certificate}' | base64 --decode >> saiyam.crt
 ```
 ## Role and role binding
 ```
@@ -71,7 +71,7 @@ export KUBECONFIG=/path/to/first/config:/path/to/second/config:/path/to/third/co
 
 Create a file deploy.json
 ``` 
-kubectl create deployment nginx --image=nginx --dry-run=client -o json > deploy.json
+kubectl create deployment nginx --image=nginx --dry-run=client -o json >> deploy.json
 kubectl run nginx --image=nginx --dry-run=client -o json
 
 ```
