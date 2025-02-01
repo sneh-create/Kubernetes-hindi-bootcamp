@@ -4,8 +4,10 @@ In this video we move ahead with Kubernetes concepts
 First we will discuss Kubernetes Architecture and try to understand what happens under the hood when you run `kubectl run nginx --image=nginx`
 
 ## Create CSR
+```
 openssl genrsa -out saiyam.key 2048
 openssl req -new -key saiyam.key -out saiyam.csr -subj "/CN=saiyam/O=group1"
+```
 
 ## Sign CSE with Kubernetes CA
 cat saiyam.csr | base64 | tr -d '\n'
